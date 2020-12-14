@@ -44,6 +44,7 @@ h3 + small, h1 + small{
 .input-container{
   width: 100%;
   max-width: calc(100vw - 1rem);
+  margin: auto;
   flex-direction: column;
 }
 
@@ -63,6 +64,7 @@ h3 + small, h1 + small{
 }
 .input-group input{
   width: calc(100% - 5.5rem);
+  max-width: 15rem;
 }
 
 @media(max-width:500px){
@@ -148,7 +150,7 @@ input.input:focus{
 .highlight{
   color:white;
   background:#03506f;
-  padding: 1px 10px;
+  padding: 2px 1px;
   border-radius: 4px;
 }
 
