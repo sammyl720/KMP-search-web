@@ -70,7 +70,7 @@ h3 + small, h1 + small{
 @media(max-width:500px){
   .input-container{
     flex-direction: column;
-    width: calc(100vw - 1rem);
+    max-width: calc(100vw - 1rem);
     height: 200px;
     margin:auto;
   }
