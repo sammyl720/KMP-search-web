@@ -43,6 +43,7 @@ h3 + small, h1 + small{
 }
 .input-container{
   width: 100%;
+  max-width: calc(100vw - 1rem);
   flex-direction: column;
 }
 
