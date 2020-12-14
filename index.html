@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>KMP Search Algorithm</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Search Text</h1>
+      <small>KMP Search Algorithm</small>
+      <div class="input-container">
+        <div class="input-group">
+          <label for="text">Text </label>
+          <input class="input"
+        type="text" id="text" placeholder="Text to search..." />
+        </div>
+        <div class="input-group">
+          <label for="pattern">Pattern </label>
+          <input type="text"
+        placeholder="Pattern to find..." id="pattern" class="pattern input">
+        </div>
+        <button id="search" class="btn">Search</button>
+      </div>
+    </div>
+    <div id="results">
+      <div class="results-container">
+        <h3>Search Text for Pattern</h3>
+        <small>The results will show up here</small>
+        <div class='result-text'>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
