@@ -10,19 +10,19 @@
     <div class="container">
       <h1>Search Text</h1>
       <small>KMP Search Algorithm</small>
-      <div class="input-container">
+      <form class="input-container" id="form" autocomplete="off">
         <div class="input-group">
           <label for="text">Text </label>
           <input class="input"
-        type="text" id="text" placeholder="Text to search..." />
+        type="text" id="text" placeholder="Text to search..." required />
         </div>
         <div class="input-group">
           <label for="pattern">Pattern </label>
           <input type="text"
-        placeholder="Pattern to find..." id="pattern" class="pattern input">
+        placeholder="Pattern to find..." id="pattern" class="pattern input" required>
         </div>
-        <button id="search" class="btn">Search</button>
-      </div>
+        <button id="search" type="submit" class="btn">Search</button>
+      </form>
     </div>
     <div id="results">
       <div class="results-container">

@@ -1,10 +1,14 @@
 const textInput = document.getElementById('text')
 const patternInput = document.getElementById('pattern')
-const searchBtn = document.getElementById('search')
-const resultsHook = document.getElementById('results')
-searchBtn.addEventListener('click', (e) => {
-  const text = textInput.value;
-  const pattern = patternInput.value;
+const searchBtn = document.getElementById('search');
+const form = document.getElementById('form');
+const resultsHook = document.getElementById('results');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const text = textInput.value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const pattern = patternInput.value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  textInput.value = '';
+  patternInput.value = '';
   if(text.length === 0 || pattern.length === 0 || pattern.length > text.length){
     // console.log('No Matches Can Be Found\nInvalid Input.')
     return alert('No Matches Can Be Found\nInvalid Input.')
@@ -20,7 +24,7 @@ searchBtn.addEventListener('click', (e) => {
       links += `<li class='link-item'><a href='#result-${j}'>Match ${j}</a></li>`;
     }
     resultsContainer.innerHTML = `
-    <div class='matches-info'>Found <span class='number-of-matches'>${matches.length} match</span> for <span class='result-ptrn'>"${pattern}"</span> in <br /><span class='result-txt-substr'>"${text.substr(0,40)}..."</span>
+    <div class='matches-info'>Found <span class='number-of-matches'>${matches.length} match${matches.length > 1 ? 'es': ''}</span> for <span class='result-ptrn'>"${pattern}"</span> in <br /><span class='result-txt-substr'>"${text.substr(0,40)}..."</span>
     <br />
     <ul class='links'>${links}</ul>
     </div>
@@ -30,7 +34,7 @@ searchBtn.addEventListener('click', (e) => {
     `
   } else {
     resultsContainer.innerHTML = `<div class='no-result'>
-    No results for <span class='result-ptrn'>"${text}"</span> found in <br /><span class='result-txt-substr'>"${text.substr(0,20)}..."</span>
+    No results for <span class='result-ptrn'>"${pattern}"</span> found in <br /><span class='result-txt-substr'>"${text.substr(0,20)}..."</span>
     </div>`
   }
 
@@ -58,6 +62,7 @@ function formatText(text, matchesArray){
     }
     start++;
   }
+  resultText = '<p>' + resultText + "</p>";
   return resultText;
 }
 

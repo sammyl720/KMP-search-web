@@ -183,6 +183,7 @@ li.link{
 }
 
 .link-item a{
+  margin-right:5px;
   text-decoration: none;
   color:#03506f;
   font-weight: 600;
